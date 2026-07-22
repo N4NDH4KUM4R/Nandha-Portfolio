@@ -1,33 +1,34 @@
 name: Nandhakumar Portfolio CI/CD Pipeline Deployment Workflow
 
 on:
-push:
-  branches: - master # Change to main if that's your default branch
+  push:
+    branches:
+      - master # change to main if your branch is main
 
 permissions:
-  contents: read
-  pages: write
+  contents: write
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
-  steps:
-    -name: Checkout Repository
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    -name: Setup Node.js
-    uses: actions/setup-node@v4
-    with:
-        node-version: 24
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
 
-- name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build My Portfolio
+      - name: Build Project
         run: npm run build
 
-      - name: Deploy Portfolio to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
