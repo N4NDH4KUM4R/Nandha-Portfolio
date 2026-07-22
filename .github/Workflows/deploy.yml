@@ -2,7 +2,7 @@ name: Nandhakumar Portfolio CI/CD Pipeline Deployment Workflow
 
 on:
 push:
-  branches: -master # Change to main if that's your default branch
+  branches: - master # Change to main if that's your default branch
 
 permissions:
   contents: read
