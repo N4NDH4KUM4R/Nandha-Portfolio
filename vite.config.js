@@ -8,5 +8,5 @@ export default defineConfig({
     port: 3007,
     host: true,
   },
-  base: "Nandha-Postfolio/",
+  base: "/Nandha-Postfolio/",
 });
