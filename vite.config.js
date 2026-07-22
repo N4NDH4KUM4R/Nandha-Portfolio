@@ -5,7 +5,8 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude: ["**/*.docx"], // Handle .docx files as assets
   server: {
-    port: 3000,
-    open: true,
+    port: 3007,
+    host: true,
   },
+  base: "Nandha-Postfolio/",
 });
